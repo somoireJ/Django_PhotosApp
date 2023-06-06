@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock %}</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" integrity="sha512-lP+V7bQaWjE2xftQX9IuVwmrjW/cJnCG7l/ZDlGgjOOs1sHwbj/nj0hJ9NkNc1S0y8N0Cw2N4gJv4roY/WhdA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static 'myApp:style.css' %}">
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-8wz1Q4Q_XAg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+}
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="menu-list">
+          <li>
+            <a href="{% url 'myApp:view_my_photos' %}" class="btn btn-primary">View Photos</a>
+          </li>
+          <li>
+            <a href="{% url 'myApp:view_my_portraits' %}" class="btn btn-primary">View Portraits</a>
+          </li>
+          <li>
+            <a href="{% url 'myApp:view_my_artworks' %}" class="btn btn-primary">View Artwork</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="container py-5">
+    {% block content %}
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="text-center">
+          <h2>Welcome to My Gallery!</h2>
+          <p>Click below to view your gallery and explore your beautiful photos.</p>
+          <a href="{% url 'myApp:view_my_photos' %}" class="btn btn-primary">View Photos </a><br/><br/><br/>
+          <a href="{% url 'myApp:view_my_potraits' %}" class="btn btn-primary">View Potraits </a><br/><br/><br/>
+          <a href="{% url 'myApp:view_my_artworks' %}" class="btn btn-primary">View Artwork </a>
+          
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.min.js" integrity="sha512-NBshmv9/D7CpKjxKt7UTuAs3PBJV7zPhSzb5m5eLqjW5+5aj4f+j4+4Q2fvj62W4R+G1dpsNn6txFfIuj+XKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

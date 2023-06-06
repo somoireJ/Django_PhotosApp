@@ -1,0 +1,37 @@
+{% extends 'home.html' %}
+
+{% block title %}
+My Gallery - View My Gallery
+{% endblock %}
+
+{% block content %}
+  <h1>My Gallery</h1>
+
+  <!-- Search Bar -->
+  <form action="{% url 'myApp:search_form' %}" method="GET" class="mb-4">
+    <div class="input-group">
+      <input type="text" name="query" class="form-control" placeholder="Search photos">
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="submit">Search</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="row">
+    {% for photo in photos %}
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="{{ photo.image.url }}" alt="{{ photo.title }}" class="card-img-top" style="max-height: 300px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title">{{ photo.title }}</h5>
+            <p class="card-text">{{ photo.description }}</p>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <div class="col">
+        <p>No photos uploaded yet.</p>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

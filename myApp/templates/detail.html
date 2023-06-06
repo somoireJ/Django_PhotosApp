@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="row mt-4">
+    <div class="col-md-8">
+      <div class="card">
+        <!-- <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.title }}"> -->
+        <div class="card-body">
+          <h5 class="card-title">{{ item.title }}</h5>
+          <p class="card-text">{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

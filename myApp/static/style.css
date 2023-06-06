@@ -1,0 +1,92 @@
+/* Add styles here */
+
+/* Background color */
+body {
+    background-color: #f8f9fa;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #007bff;
+    padding: 20px;
+    color: white;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 36px;
+  }
+  
+  header a {
+    color: white;
+  }
+  
+  /* Content styles */
+  .container {
+    margin-top: 20px;
+  }
+  
+  .card {
+    border: none;
+    margin-bottom: 20px;
+  }
+  
+  .card img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .card-title {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  
+  .card-text {
+    margin-bottom: 20px;
+  }
+  
+  /* Form styles */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-control-label {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .form-control {
+    font-size: 18px;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid #007bff;
+  }
+  
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #007bff;
+  }
+  
+  /* Button styles */
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 0;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    border-radius: 0;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  

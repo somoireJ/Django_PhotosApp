@@ -1,0 +1,26 @@
+{% extends 'home.html' %}
+
+{% block title %}
+My Gallery - View My Gallery
+{% endblock %}
+
+{% block content %}
+  <h1>My Gallery</h1>
+  <div class="row">
+    {% for potrait in potraits %}
+      <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="{{ potrait.image.url }}" alt="{{ photo.title }}" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">{{ potrait.title }}</h5>
+            <p class="card-text">{{ potrait.description }}</p>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <div class="col">
+        <p>No potrait uploaded yet.</p>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

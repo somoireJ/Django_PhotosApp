@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock %}</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" integrity="sha384-Zn538UFIbYz0+PH0G5GgFAw5aVR2ti+2L9E1p1BiblLF5o1nRI7SMw8A+0OW27p0" crossorigin="anonymous">
+  <style>
+/* Import custom fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* Set body background */
+body {
+  background-image: url('https://images.unsplash.com/photo-8wz1Q4Q_XAg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Set header styles */
+header {
+  background-color: #F2F2F2;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  color: #777;
+}
+
+/* Set navbar styles */
+.navbar {
+  background-color: #F2F2F2;
+  padding: 10px;
+}
+
+.nav-item {
+  margin-right: 15px;
+}
+
+.nav-link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #FF0000;
+}
+
+/* Set content styles */
+.container {
+  padding: 20px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #FFF;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #FFF;
+  background-color: #FF0000;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #990000;
+}
+
+/* Set footer styles */
+.footer {
+  background-color: #F2F2F2;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #777;
+}
+
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <div class="header">
+        <h1>My Gallery</h1>
+        <p>Discover and share beautiful photos</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'myApp:home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'myApp:upload_photo' %}">Upload Photo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'myApp:upload_portrait' %}">Upload Portrait</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'myApp:upload_artwork' %}">Upload Artwork</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="container py-5">
+    {% block content %}
+      <div class="input-group mb-3">
+        <form action="{% url 'myApp:home' %}" method="GET">
+          <a class="nav-link" href="{% url 'myApp:search_form' %}">Upload Artwork</a>
+          <input type="text" class="form-control" placeholder="Search by title or description" name="q" value="{{ request.GET.q }}">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+          </div>
+        </form>
+      </div>
+    {% endblock %}
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2023 My Gallery. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha384-pzjwUkuQj+2gFZvD8ih5ha9fkVwNfAxT3eM6sfwHoBJ6us4zjiVMs26Hicrl6F4E" crossorigin="anonymous"></script>
+</body>
+</html>
+
