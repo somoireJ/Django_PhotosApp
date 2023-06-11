@@ -17,10 +17,9 @@ def home(request):
     return render(request, 'home.html', {'photos': photos, 'portraits': portraits, 'artworks': artwork_filter.qs, 'filter': artwork_filter})
 
 def search_form(request):
-    query = request.GET.get('q')
+    query = request.GET.get('query')
     photos = Photo.objects.filter(title__icontains=query) | Photo.objects.filter(description__icontains=query)
-    return render(request, 'search_form.html', {'photos': photos, 'query': query})
-
+    return render(request, 'view_my_photos.html', {'photos': photos, 'query': query})
 
 
 def view_my_Photos(request):
