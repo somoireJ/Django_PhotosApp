@@ -94,13 +94,19 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+# # RENDER DATABASE
+import dj_database_url
 
+DATABASES = {
+    'default': dj_database_url.parse('postgres://productiondatabase_0unm_user:YtQUADdtmCnhxPNSFPRQmxOj3OlgKue8@dpg-chegb8bhp8ubgo5rehc0-a.oregon-postgres.render.com/productiondatabase_0unm')
+    
+}
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
